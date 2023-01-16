@@ -5,15 +5,17 @@ COMMON
 */
 
 body {
-    background-color: khaki;
+    background-color:powderblue;
 }
 
 .content {
+    background-color: whitesmoke;
     max-width: 600PX;
     height: 100%;
     margin: auto;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
+    
 }
 
 /* 
@@ -23,19 +25,23 @@ POST
 */
 
 .post_form{
-    padding: 20px 40px;
-    border: 2px solid black;
+    width: 100%;
     padding: 10px;
+    box-sizing: border-box;
+    font-size: larger;
+    border: 1px solid black;
+    
 }
-.post_form input{
-    width: 70%;
-    margin-bottom: 10px;
+form input , form textarea {
+    width: 100%;
     padding: 10px;
-    border: 1px solid white;
+    box-sizing: border-box;
+    font-size: larger;
 }
+
 .post_form textarea{
-    width: 70%;
-    padding: 10px;
+    width: 100%;
+    padding: 20px 40px;
     border: 1px solid white;
 
 }
@@ -44,8 +50,8 @@ POST
 }
 .posts li {
     display: flex;
-    border-bottom: 2px solid black;
-    padding: 17px;
+    border-bottom: 1px solid black;
+    padding: 20px;
 }
 
 .posts li .logo {

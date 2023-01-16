@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+{% load static %}
+
+<section class='edit_form'> Edit</section>
+    <form action="/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" required> <br>
+        <textarea name="body" placeholder="Tell us anything" required></textarea> <br>
+        <input type="submit" value="Post">
+    </form>
+
+    {% endblock content %}
