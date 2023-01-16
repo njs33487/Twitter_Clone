@@ -1,0 +1,82 @@
+/* 
+###################################
+COMMON
+################################### 
+*/
+
+body {
+    background-color: khaki;
+}
+
+.content {
+    max-width: 600PX;
+    height: 100%;
+    margin: auto;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* 
+###################################
+POST
+################################### 
+*/
+
+.post_form{
+    padding: 20px 40px;
+    border: 2px solid black;
+    padding: 10px;
+}
+.post_form input{
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid white;
+}
+.post_form textarea{
+    width: 70%;
+    padding: 10px;
+    border: 1px solid white;
+
+}
+.posts ul{
+    padding: 0;
+}
+.posts li {
+    display: flex;
+    border-bottom: 2px solid black;
+    padding: 17px;
+}
+
+.posts li .logo {
+    flex-basis: 15%;
+}
+
+.posts li .logo img {
+    width: 60%;
+}
+
+.posts li .name_body {
+    flex-basis: 85%;
+}
+
+.posts li .name_body .menu{
+    flex-basis: 20%;
+    width: 20px;
+    height: 20px;
+
+}
+
+.posts li .name_body .name{
+    font-weight: bold;
+}
+
+.posts li .name_body .datetime{
+    color: grey;
+}
+
+@media screen and (max-width = 500px) {
+    .posts li .name_body{
+        font-size: 20px;
+    }
+}

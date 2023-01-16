@@ -25,7 +25,7 @@ def index(request):
     
     # show
     return  render(request, 'posts.html',
-                    {'posts': posts})
+                    {'posts': posts})g
 
 def delete(request, post_id):
     # FIND post
