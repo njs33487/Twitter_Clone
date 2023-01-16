@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoforum.urls'
+ROOT_URLCONF = 'Twitter_Clone1.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoforum.wsgi.application'
+WSGI_APPLICATION = 'Twitter_Clone1.wsgi.application'
 
 
 # Database
