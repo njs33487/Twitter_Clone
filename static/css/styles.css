@@ -18,6 +18,7 @@ body {
     
 }
 
+
 /* 
 ###################################
 POST
@@ -51,7 +52,29 @@ form input , form textarea {
 .posts li {
     display: flex;
     border-bottom: 1px solid black;
-    padding: 20px;
+    padding: 20px 40px;
+    position: relative;
+}
+.posts li  .menu_icon{
+width: 30px;
+position: absolute;
+top: 18px;
+right: 30px;
+
+}
+.post li .menu{
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: small;
+}
+.post li .menu a{
+    text-decoration: none;
+
 }
 
 .posts li .logo {
@@ -71,6 +94,12 @@ form input , form textarea {
     width: 20px;
     height: 20px;
 
+}
+.post li .name_body .like_form {
+        height: 10px;
+        width: 10px;
+        padding: 10px;
+    
 }
 
 .posts li .name_body .name{

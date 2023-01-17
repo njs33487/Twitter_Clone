@@ -1,6 +1,20 @@
+///////////////////////////////////////
+// JavaScript post page !!
+/////////////////////////////////////////
+alert('js activation!!!')
+
+s(function(){
+    // executed when js-menu-icon is clicked
+    s(".js-menu-icon").click(function(){
+        alert('clicked')
+
+    })
+})
+
 var heartImg = document.querySelector('.heart-img');
 var initialSrc = heartImg.src;
 var likedSrc = "{% static 'img\heart (1).png' %}";
+
 
 document.querySelector('.like-button').addEventListener('click', function(event) {
     event.preventDefault();

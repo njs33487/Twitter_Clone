@@ -10,8 +10,12 @@ class Post(models.Model):
         'Name', blank = False, null=False, max_length=14, db_index = True , default= 'Anonymous'
     )
     body =models.CharField(
-        'Body', blank=True,null=True,max_length=140,db_index=True
+        'Body', blank=True,null=True,max_length=255,db_index=True
     )
     created_at = models.DateTimeField(
         'Created DateTime',blank=True,auto_now_add=True
     )
+
+    def _str_(self):
+        return self.name
+
