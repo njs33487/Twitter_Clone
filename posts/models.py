@@ -12,10 +12,17 @@ class Post(models.Model):
     body =models.CharField(
         'Body', blank=True,null=True,max_length=255,db_index=True
     )
+
+    like =models.IntegerField(
+        default = 0 , blank=True , null=True, 
+    )
+
     created_at = models.DateTimeField(
         'Created DateTime',blank=True,auto_now_add=True
     )
 
-    def _str_(self):
-        return self.name
 
+
+    def _str_(self):
+    
+        return self.name

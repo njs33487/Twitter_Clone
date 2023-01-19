@@ -2,11 +2,11 @@
 {% load static %}
 
 <section class='edit_form'> Edit</section>
-    <form action="/" method="POST">
+    <form method="POST">
         {% csrf_token %}
-        <input type="text" name="name" placeholder="Name" required> <br>
-        <textarea name="body" placeholder="Tell us anything" required></textarea> <br>
-        <input type="submit" value="Post">
+        <input type="text" name="name" placeholder="Name" value="{{post.name}}" required> <br>
+        <textarea name="body" placeholder="Tell us anything" required>{{post.body}}</textarea> <br>
+        <button value = "tweet">Tweet </button>
     </form>
 
-    {% endblock content %}
+{% endblock  %}

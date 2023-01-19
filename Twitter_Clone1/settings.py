@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +28,11 @@ SECRET_KEY = 'django-insecure-k$*qe*)0n1=ai&m_@a%slq-pehe+3d_$m3&1v4as(bsb+qb_7!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+X_FRAME_OPTIONS = "*"
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1:8000','https://0.0.0:3000']
+
 
 
 # Application definition
@@ -38,9 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
+    'corsheaders',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -117,6 +128,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+cloudinary.config( 
+  cloud_name = "dbju6nxn7", 
+  api_key = "398951524626539", 
+  api_secret = "iVtgIfwk9ZFU45G84PmluW7TZ6Q" 
+)
+
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'

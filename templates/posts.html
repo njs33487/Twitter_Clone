@@ -2,20 +2,29 @@
 {% load static %}
 
 <section class='content'>
-    <section class='post_form'>Home</section>
+    <div class="main-header">
+        <div><img src="{% static 'img\twitter.png' %}" class="logo"></div>
+        <div>
+            <h1>Home</h1>
+        </div>
+    </div>
     <form action="/" method="POST">
         {% csrf_token %}
         <input type="text" name="name" placeholder="Name" required> <br>
         <textarea name="body" placeholder="Tell us anything" required></textarea> <br>
-        <input class="submit" type="submit" value="Tweet">
+        <div class="flex-input">
+            <div><input class="form-control" name="image" type="file"></div>
+            <div><input class="submit" type="submit" value="Tweet"></div>
+        </div>
     </form>
     <section class="posts">
         <ul>
-            {% for post in posts %}
+            {% for post in posts reversed %}
             <li>
-                <img class="menu_icon js-menu-icon" src="{% static 'img/more.png' %}" />
+                <img class="menu_icon js-menu-icon" src="{% static 'img/more.png' %}" alt="menu " />
                 <div class="menu">
-                    <a href="/delete/{{post.id}}/">Delete</a>
+                    <a href="/delete/{{post.id}}/">Delete</a> <br>
+                    <a href="/edit/{{ post.id }}/">Edit</a>
                 </div>
                 <div class="logo">
                     <img src="{% static 'img\profile-user.png' %}">
@@ -24,24 +33,20 @@
                     <div class="name">{{post.name}}</div>
                     <div class="datetime"> {{post.created_at}}</div>
                     <p> {{post.body}}</p>
-                    <a href="/edit/{{ post.id }}/">edit</a>
 
-                    <div class="like_form">
-                        <form method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="like_button">
-                                <img class="heart_like" src="{% static ''%}" alt="Like">
-                            </button>
-                            <span class="like_count">{{ post.likes.count }}</span>
-                        </form>
-                    </div>
+                </div>
+                <div class="like">
+                    <a href="like/{{post.id}}/">
+                        <img class="heart_like" src="{% static 'img\heart.png'%}" alt="Like"></a>
+                    <p>{{post.like}}</p>
                 </div>
             </li>
             {% endfor %}
         </ul>
     </section>
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="{% static 'js\posts.js' %}"></script>
 </section>
 
-{% endblock content %}
+{% endblock %}
