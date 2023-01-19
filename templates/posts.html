@@ -8,7 +8,7 @@
             <h1>Home</h1>
         </div>
     </div>
-    <form action="/" method="POST">
+    <form action="/" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="text" name="name" placeholder="Name" required> <br>
         <textarea name="body" placeholder="Tell us anything" required></textarea> <br>
@@ -32,9 +32,14 @@
                 <div class="name_body">
                     <div class="name">{{post.name}}</div>
                     <div class="datetime"> {{post.created_at}}</div>
-                    <p> {{post.body}}</p>
+                    <p> {{post.body}}</p><br>
+                    <div class="post-img">
+                        {% if post.image%}
+                        <img src="{{post.image.url}}" style="width: 120px;">
+                        {% endif %}
+                    </div>
 
-                </div>
+                </div><br>
                 <div class="like">
                     <a href="like/{{post.id}}/">
                         <img class="heart_like" src="{% static 'img\heart.png'%}" alt="Like"></a>

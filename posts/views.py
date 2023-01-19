@@ -8,7 +8,7 @@ from .forms import PostForm
 def index(request):
     # if the method is post
     if request.method =='POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         # if the form is valid
         if form.is_valid():
             #yes , save

@@ -1,4 +1,6 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 
@@ -16,13 +18,11 @@ class Post(models.Model):
     like =models.IntegerField(
         default = 0 , blank=True , null=True, 
     )
+    image = CloudinaryField(
+        'image', blank=True , null=True, 
+    )
 
     created_at = models.DateTimeField(
         'Created DateTime',blank=True,auto_now_add=True
     )
 
-
-
-    def _str_(self):
-    
-        return self.name
