@@ -17,6 +17,17 @@
             <div><input class="submit" type="submit" value="Tweet"></div>
         </div>
     </form>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">For You</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Trending</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">News</a>
+        </li>
+    </ul>
     <section class="posts">
         <ul>
             {% for post in posts reversed %}
